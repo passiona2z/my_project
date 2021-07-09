@@ -2,25 +2,16 @@
 
 {% block content %}
 
-    <style>
-        .testing {
-            background-color: yellow;
-            margin: 1rem;
-            height: 48px;
-            width: 48px;
-            border-radius: .5rem;
-            display: inline-block;
-        }
+     <div style="margin: 2rem; text-align: center;">
 
-    </style>
+        <h1>HTTP method</h1>
 
-    <div style="height: 20rem; background-color : aqua; margin: 2rem; border-radius: 1rem;">
-        <h1>this is my project</h1>
-    <div class="testing" style="height: 48px; width: 48px">block</div>
-    <div class="testing" style="height: 3rem; width: 3rem">inline</div>
-    <div class="testing" style="height: 3em; width: 3em">none</div>
-    <div class="testing" style="height: 30%; width: 30%">inline-block</div>
+        <form action="/accounts/my_project/" method="post">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-outline-dark rounded-pill px-5">
+        </form>
 
+        <h3>{{ text }}</h3>
 
     </div>
 

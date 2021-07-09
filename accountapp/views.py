@@ -5,4 +5,9 @@ from django.shortcuts import render
 
 
 def my_project(request):
-    return render(request, 'accountapp/my_project.html')
+    if request.method == "POST" :
+        return render(request, 'accountapp/my_project.html',
+                      context={'text': 'POST METHOD!'})
+    else :
+        return render(request, 'accountapp/my_project.html',
+                      context={'text': 'POST METHOD!'})
